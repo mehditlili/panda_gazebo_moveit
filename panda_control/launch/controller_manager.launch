@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+<!-- load the controllers -->
+<node name="controller"
+      pkg="controller_manager"
+      type="controller_manager"
+      respawn="false"
+      output="screen"
+      ns="panda"
+      args="spawn
+            joint_state_controller
+	    arm_position_controller"/>
+</launch>

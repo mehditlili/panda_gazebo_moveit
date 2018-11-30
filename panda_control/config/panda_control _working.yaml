@@ -3,25 +3,6 @@ panda:
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50
-
-  controller_list:
-   panda_arm_controller:
-      action_ns: follow_joint_trajectory
-      default: True
-      type: joint_trajectory_controller/FollowJointTrajectory
-      joints:
-        - panda_joint1
-        - panda_joint2
-        - panda_joint3
-        - panda_joint4
-        - panda_joint5
-        - panda_joint6
-        - panda_joint7
-  hand_controller:
-      action_ns: follow_joint_trajectory
-      default: True
-      type: joint_trajectory_controller/FollowJointTrajectory
-      joint: panda_finger_joint1
   
   # Position controllers ------------------------------
   joint1_position_controller:
