@@ -288,5 +288,3 @@
         <mimic joint="panda_finger_joint1" />
     </joint>
 </robot>
-
-
