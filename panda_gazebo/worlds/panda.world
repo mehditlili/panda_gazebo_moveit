@@ -4,9 +4,11 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
+
     <include>
       <uri>model://sun</uri>
     </include>
+
     <!-- <include>
       <uri>model://simple_gripper</uri>
       <name>simple_gripper</name>

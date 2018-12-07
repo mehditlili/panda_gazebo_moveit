@@ -8,11 +8,6 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
- 
-  
-  <remap from="/joint_controllers/follow_joint_trajectory" to="/joint_trajectory_action" />
-  <remap from="/joint_controllers/state" to="/feedback_states" />
-  <remap from="/joint_controllers/command" to="/joint_path_command"/>
   
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
@@ -34,15 +29,12 @@
     args="-urdf -model panda -param robot_description"/>
 
   <!--Convert joint states to TF transforms for rviz, etc -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-    <remap from="/joint_states" to="panda/joint_states"/>
-    <remap from="/joint_controllers/follow_joint_trajectory" to="/joint_trajectory_action" />
-    <remap from="/joint_controllers/state" to="/feedback_states" />
-    <remap from="/joint_controllers/command" to="/joint_path_command"/>
-  </node>
+  <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+  </node-->
 
   <!-- launch files -->
-  <include file="$(find panda_control)/launch/panda_control.launch"/>
+  <include file="$(find panda_control)/launch/panda_control_working.launch"/>
 
 
   <!-- maybe needed? There are more rostopics available after running roslaunch turtlebot_arm_gazebo turtlebot_arm_world.launch if this is included...
